@@ -1,7 +1,13 @@
 import { Check, Trash } from "@phosphor-icons/react";
 import styles from "./styles.module.css";
+import { ITask } from "../../App";
 
-export function TaskItem() {
+type Props = {
+  data: ITask;
+};
+
+export function TaskItem({ data }: Props) {
+  console.log(data.id);
   return (
     <>
       <div className={styles.TaskItemContainer}>
@@ -14,13 +20,16 @@ export function TaskItem() {
               className="checkbox"
             />
 
-            <span className={styles.check}>
+            <span className={data.isChecked ? styles.check : styles.uncheck}>
               <Check size={12} color="#0063BF" weight="bold" />
             </span>
 
-            <p className={styles.textChecked}>
-              Integer urna interdum massa libero auctor neque turpis turpis
-              semper. Duis vel sed fames integer.
+            <p
+              className={
+                data.isChecked ? styles.textChecked : styles.textUnchecked
+              }
+            >
+              {data.text}
             </p>
           </label>
         </div>

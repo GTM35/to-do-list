@@ -6,8 +6,31 @@ import { Button } from "./Components/Button";
 import { PlusCircle } from "@phosphor-icons/react";
 import { HeaderTasks } from "./Components/HeaderTasks";
 import { TaskItem } from "./Components/TaskItem";
+import { useState } from "react";
+
+export interface ITask {
+  id: number;
+  text: string;
+  isChecked: boolean;
+}
 
 function App() {
+  const [inputValue, setInputValue] = useState("");
+  const [tasks, setTasks] = useState<ITask[]>([]);
+
+  function handleAddTask() {
+    if (inputValue !== "") {
+      const newTask: ITask = {
+        id: new Date().getTime(),
+        text: inputValue,
+        isChecked: false,
+      };
+
+      setTasks([...tasks, newTask]);
+      setInputValue("");
+    }
+  }
+
   return (
     <>
       <Header />
@@ -20,8 +43,15 @@ function App() {
               type="text"
               placeholder="Adicione uma nova tarefa"
               required
+              onChange={(e) => setInputValue(e.target.value)}
+              value={inputValue}
             />
-            <Button>
+            <Button
+              onClick={(e) => {
+                e.preventDefault();
+                handleAddTask();
+              }}
+            >
               Criar
               <PlusCircle size={16} weight="bold" />
             </Button>
@@ -32,9 +62,9 @@ function App() {
           <HeaderTasks />
 
           <div className={styles.listTasks}>
-            <TaskItem />
-            <TaskItem />
-            <TaskItem />
+            {tasks.map((task) => (
+              <TaskItem key={task.id} data={task} />
+            ))}
           </div>
         </section>
       </main>
