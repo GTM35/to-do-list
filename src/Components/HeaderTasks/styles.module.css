@@ -1,0 +1,38 @@
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.tasksCreated > p {
+  font-size: 0.875rem;
+  color: var(--blue);
+  font-weight: bold;
+}
+
+.tasksDone > p {
+  font-size: 0.875rem;
+  color: var(--purple);
+  font-weight: bold;
+}
+
+.tasksCreated,
+.tasksDone {
+  display: flex;
+  gap: 8px;
+}
+
+.counter {
+  color: var(--gray-200);
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+  background-color: var(--gray-400);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  width: fit-content;
+}
