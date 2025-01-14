@@ -18,12 +18,20 @@ function App() {
   const [inputValue, setInputValue] = useState("");
   const [tasks, setTasks] = useState<ITask[]>([]);
 
+  const tasksCheckedCounter = tasks.reduce((prev, cur) => {
+    if (cur.isChecked) {
+      return prev + 1;
+    }
+
+    return prev;
+  }, 0);
+
   function handleAddTask() {
     if (inputValue !== "") {
       const newTask: ITask = {
         id: new Date().getTime(),
         text: inputValue,
-        isChecked: false,
+        isChecked: true,
       };
 
       setTasks([...tasks, newTask]);
@@ -59,7 +67,10 @@ function App() {
         </div>
 
         <section className={styles.ListTasksContainer}>
-          <HeaderTasks />
+          <HeaderTasks
+            tasksCounter={tasks.length}
+            tasksChecked={tasksCheckedCounter}
+          />
 
           <div className={styles.listTasks}>
             {tasks.map((task) => (

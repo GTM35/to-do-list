@@ -7,7 +7,6 @@ type Props = {
 };
 
 export function TaskItem({ data }: Props) {
-  console.log(data.id);
   return (
     <>
       <div className={styles.TaskItemContainer}>
