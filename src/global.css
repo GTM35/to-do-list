@@ -11,6 +11,13 @@
   --blue: #4ea8de;
   --blueDark: #1e6f9f;
   --danger: #e25858;
+
+  --breakpoint320: 320px;
+  --breakpoint480: 480px;
+  --breakpoint600: 600px;
+  --breakpoint801: 801px;
+  --breakpoint1025: 1025px;
+  --breakpoint1281: 1281px;
 }
 
 * {

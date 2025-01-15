@@ -1,0 +1,19 @@
+.emptyContainer {
+  width: 100%;
+  height: 15.25rem;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.emptyContainer p {
+  display: flex;
+  flex-direction: column;
+  color: var(--gray-300);
+  font-size: 1rem;
+}

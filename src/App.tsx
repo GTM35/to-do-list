@@ -7,6 +7,7 @@ import { PlusCircle } from "@phosphor-icons/react";
 import { HeaderTasks } from "./Components/HeaderTasks";
 import { TaskItem } from "./Components/TaskItem";
 import { useState } from "react";
+import { Empty } from "./Components/Empty";
 
 export interface ITask {
   id: number;
@@ -92,16 +93,20 @@ function App() {
             tasksChecked={tasksCheckedCounter}
           />
 
-          <div className={styles.listTasks}>
-            {tasks.map((task) => (
-              <TaskItem
-                key={task.id}
-                data={task}
-                toggleChecked={toggleCheckedTask}
-                deleteTask={deleteTask}
-              />
-            ))}
-          </div>
+          {tasks.length > 0 ? (
+            <div className={styles.listTasks}>
+              {tasks.map((task) => (
+                <TaskItem
+                  key={task.id}
+                  data={task}
+                  toggleChecked={toggleCheckedTask}
+                  deleteTask={deleteTask}
+                />
+              ))}
+            </div>
+          ) : (
+            <Empty />
+          )}
         </section>
       </main>
     </>
