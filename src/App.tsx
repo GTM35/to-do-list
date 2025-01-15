@@ -31,13 +31,27 @@ function App() {
       const newTask: ITask = {
         id: new Date().getTime(),
         text: inputValue,
-        isChecked: true,
+        isChecked: false,
       };
 
       setTasks([...tasks, newTask]);
       setInputValue("");
     }
   }
+
+  function toggleCheckedTask({ id, value }: { id: number; value: boolean }) {
+    const taskChecked = tasks.map((task) => {
+      if (task.id === id) {
+        return { ...task, isChecked: value };
+      }
+
+      return { ...task };
+    });
+
+    setTasks(taskChecked);
+  }
+
+  console.log("data", tasks);
 
   return (
     <>
@@ -74,7 +88,11 @@ function App() {
 
           <div className={styles.listTasks}>
             {tasks.map((task) => (
-              <TaskItem key={task.id} data={task} />
+              <TaskItem
+                key={task.id}
+                data={task}
+                toggleChecked={toggleCheckedTask}
+              />
             ))}
           </div>
         </section>

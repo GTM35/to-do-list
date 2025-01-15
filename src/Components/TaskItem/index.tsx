@@ -4,19 +4,26 @@ import { ITask } from "../../App";
 
 type Props = {
   data: ITask;
+  toggleChecked: ({ id, value }: { id: number; value: boolean }) => void;
 };
 
-export function TaskItem({ data }: Props) {
+export function TaskItem({ data, toggleChecked }: Props) {
+  function handleToggleChecked() {
+    toggleChecked({ id: data.id, value: !data.isChecked });
+  }
+
   return (
     <>
       <div className={styles.TaskItemContainer}>
         <div>
-          <label htmlFor="checkbox">
+          <label htmlFor={`checkbox-${data.id}`}>
             <input
               type="checkbox"
               name="checkbox"
-              id="checkbox"
+              id={`checkbox-${data.id}`}
               className="checkbox"
+              onChange={handleToggleChecked}
+              checked={data.isChecked}
             />
 
             <span className={data.isChecked ? styles.check : styles.uncheck}>
