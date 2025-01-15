@@ -51,6 +51,12 @@ function App() {
     setTasks(taskChecked);
   }
 
+  function deleteTask(id: number) {
+    const taskDeleted = tasks.filter((task) => task.id !== id);
+
+    setTasks(taskDeleted);
+  }
+
   console.log("data", tasks);
 
   return (
@@ -92,6 +98,7 @@ function App() {
                 key={task.id}
                 data={task}
                 toggleChecked={toggleCheckedTask}
+                deleteTask={deleteTask}
               />
             ))}
           </div>

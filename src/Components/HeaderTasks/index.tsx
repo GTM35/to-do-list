@@ -14,7 +14,11 @@ export function HeaderTasks({ tasksChecked, tasksCounter }: Props) {
       </aside>
       <aside className={styles.tasksDone}>
         <p>Concluídas</p>
-        <span className={styles.counter}>{tasksChecked}</span>
+        <span className={styles.counter}>
+          {tasksCounter === 0
+            ? `${tasksCounter}`
+            : `${tasksChecked} de ${tasksCounter}`}
+        </span>
       </aside>
     </header>
   );

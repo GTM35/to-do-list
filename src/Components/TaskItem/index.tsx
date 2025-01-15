@@ -5,11 +5,16 @@ import { ITask } from "../../App";
 type Props = {
   data: ITask;
   toggleChecked: ({ id, value }: { id: number; value: boolean }) => void;
+  deleteTask: (id: number) => void;
 };
 
-export function TaskItem({ data, toggleChecked }: Props) {
+export function TaskItem({ data, toggleChecked, deleteTask }: Props) {
   function handleToggleChecked() {
     toggleChecked({ id: data.id, value: !data.isChecked });
+  }
+
+  function handleDeleteTask() {
+    deleteTask(data.id);
   }
 
   return (
@@ -39,7 +44,7 @@ export function TaskItem({ data, toggleChecked }: Props) {
             </p>
           </label>
         </div>
-        <button>
+        <button onClick={handleDeleteTask}>
           <Trash size={16} color="#808080" />
         </button>
       </div>
