@@ -13,6 +13,13 @@
   line-height: 140%;
   max-width: 5.625rem;
   width: 100%;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    max-width: none;
+    height: 30px;
+    flex: none;
+  }
 }
 
 .button:hover {
