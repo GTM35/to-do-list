@@ -19,7 +19,7 @@
 
 <h2 id="about">📌 Sobre</h2>
 
-Este repositório trata-se de uma Aplição de controle de tarefas no estilo to-do list, desenvolvido com React.
+Este repositório trata-se de uma aplicação de controle de tarefas no estilo to-do list, desenvolvido com React.
 
 [![project][PROJECT__BADGE]][PROJECT__URL]
 
