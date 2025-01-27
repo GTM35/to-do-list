@@ -4,8 +4,6 @@
 [PROJECT__BADGE]: https://img.shields.io/badge/visite_este_projeto-black?style=for-the-badge
 [PROJECT__URL]: https://to-do-list-5dj08n1kj-gustavo-teofilos-projects.vercel.app/
 
-![Static Badge]
-
 <h1 align="center" style="font-weight: bold;">To-do list 💻</h1>
 
 ![react][REACT__BADGE] ![typescript][TYPESCRIPT__BADGE] ![javascript][JAVASCRIPT__BADGE]
