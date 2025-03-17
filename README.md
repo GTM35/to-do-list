@@ -1,4 +1,3 @@
-[JAVASCRIPT__BADGE]: https://img.shields.io/badge/Javascript-000?style=for-the-badge&logo=javascript
 [TYPESCRIPT__BADGE]: https://img.shields.io/badge/typescript-D4FAFF?style=for-the-badge&logo=typescript
 [REACT__BADGE]: https://img.shields.io/badge/React-005CFE?style=for-the-badge&logo=react
 [PROJECT__BADGE]: https://img.shields.io/badge/visite_este_projeto-black?style=for-the-badge
@@ -6,7 +5,7 @@
 
 <h1 align="center" style="font-weight: bold;">To-do list 💻</h1>
 
-![react][REACT__BADGE] ![typescript][TYPESCRIPT__BADGE] ![javascript][JAVASCRIPT__BADGE]
+![react][REACT__BADGE] ![typescript][TYPESCRIPT__BADGE]
 
 <p align="center">
  • <a href="#about">Sobre</a> • 
